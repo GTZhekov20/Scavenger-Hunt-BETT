@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1 - Scavenger Hunt</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="content">
+    <header>
+      <h1>Task 1: Welcome to the Hunt!</h1>
+      <p>Hi, this is one of the scavenger hunt tasks! If you’re unsure what to do, come visit us at the Bulgarian stand!</p>
+    </header>
+    <main>
+      <div class="challenge">
+        <h2>Your Challenge:</h2>
+        <p>Decode this binary: <code>01001000 01101001</code></p>
+        <label for="answer">Enter your answer:</label>
+        <input type="text" id="answer" placeholder="Type here..." />
+        <button id="submit">Submit</button>
+      </div>
+      <div id="popup" class="popup hidden">
+        <p>🎉 Correct! Here's your hint: "Look near the conference hall doors for the next clue."</p>
+        <button onclick="closePopup()">Close</button>
+      </div>
+    </main>
+  </div>
+  <footer>
+    <p>Powered by the Bulgarian IT Convention Team.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
