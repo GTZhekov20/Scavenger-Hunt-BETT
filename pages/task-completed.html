@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Complete - Scavenger Hunt</title>
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+  <div class="content">
+    <header>
+      <h1>Task Complete!</h1>
+      <p>Well done! You've completed this task.</p>
+    </header>
+    <main>
+      <div id="hint-section">
+        <h2>Next Hint:</h2>
+        <p id="next-hint"></p>
+      </div>
+      <button onclick="window.location.href='../index.html'">Go Back to Home</button>
+    </main>
+  </div>
+  
+  <footer>
+    <p>Powered by the Bulgarian IT Convention Team.</p>
+  </footer>
+
+  <script src="../scripts/tasks.js"></script>
+
+  <script>
+    // Extract task ID and hint from the URL
+    const task = tasks.find(t => t.id === parseInt(localStorage.getItem('taskId')));
+
+    // Display the hint for the next task
+    document.getElementById("next-hint").textContent = task.hint;
+  </script>
+</body>
+</html>

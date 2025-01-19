@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3 - Scavenger Hunt</title>
+  <link rel="stylesheet" href="../../styles/styles.css">
+</head>
+<body>
+
+    <script>
+        const userActivationCode = prompt(`Enter the activation code for Task 3: Sandbox Search:`);
+        if (userActivationCode !== 'quick response') {
+            alert("Incorrect activation code! Redirecting to the main page.");
+            window.location.href = location.href;
+        }
+    </script>
+
+  <div class="content">
+    <header>
+      <h1>Task 3: Sandbox Search</h1>
+      <p>Find the term used for a safe testing environment in IT.</p>
+    </header>
+    <main>
+      <div class="challenge">
+        <h2>In IT, what do we call a virtual space used for testing and experimenting without affecting the real system?</h2>
+        <input type="text" id="answer" placeholder="Type here..." />
+        <button id="submit">Submit</button>
+      </div>
+      <div id="popup-correct" class="popup correct hidden">
+        <p>🎉 Correct! Task completed.</p>
+        <button onclick="closePopup('popup-correct', 'correct')">Close</button>
+      </div>
+
+      <div id="popup-wrong" class="popup wrong hidden">
+        <p>❌ Wrong answer. Try again!</p>
+        <button onclick="closePopup('popup-wrong', 'wrong')">Close</button>
+      </div>
+    </main>
+  </div>
+  <footer>
+    <p>Powered by the Bulgarian IT Convention Team.</p>
+  </footer>
+
+  <script>
+    document.getElementById('submit').addEventListener('click', function () {
+    const answer = document.getElementById('answer').value.trim();
+    const isCorrect = answer ? answer.toLowerCase() === 'sandbox' : false;
+
+    if (isCorrect) {
+        document.getElementById("popup-correct").classList.remove('hidden');
+      } else {
+        document.getElementById("popup-wrong").classList.remove('hidden');
+      }
+    });
+
+    function closePopup(id, type) {
+        document.getElementById(`${id}`).classList.add('hidden');
+        if(type === 'correct'){
+            localStorage.setItem("taskId", 3);
+            window.location.href = '../task-completed.html';
+        }     
+    }
+  </script>
+</body>
+</html>

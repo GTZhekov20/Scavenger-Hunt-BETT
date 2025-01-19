@@ -3,48 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Task 1 - Scavenger Hunt</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Scavenger Hunt</title>
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
   <div class="content">
     <header>
-      <h1>Task 1: Welcome to the Hunt!</h1>
-      <p>Hi, this is one of the scavenger hunt tasks! If you’re unsure what to do, come visit us at the Bulgarian stand!</p>
+      <h1>Welcome to the Scavenger Hunt!</h1>
+      <p>Join us on an exciting journey through the convention. Complete tasks, solve puzzles, and find clues to win!</p>
     </header>
     <main>
-      <div class="challenge">
-        <h2>Your Challenge:</h2>
-        <p>Decode this binary: <code>01001000 01101001</code></p>
-        <label for="answer">Enter your answer:</label>
-        <input type="text" id="answer" placeholder="Type here..." />
-        <button id="submit">Submit</button>
-      </div>
-      <div id="popup" class="popup hidden">
-        <p>🎉 Correct! Here's your hint: "Look near the conference hall doors for the next clue."</p>
-        <button onclick="closePopup()">Close</button>
-      </div>
+      <p>Click the button below to start your adventure with Task 1.</p>
+      <a href="pages/tasks/task1.html?task=1&token=aa3f4a5e-1c22-4d48-9836-e5c48b7f95f3">
+        <button class="challenge-button"> Continue to task 1</button>
+      </a>
     </main>
   </div>
   <footer>
     <p>Powered by the Bulgarian IT Convention Team.</p>
   </footer>
-
-  <script>
-    document.getElementById('submit').addEventListener('click', function () {
-    const answer = document.getElementById('answer').value.trim();
-    if (answer.toLowerCase() === "hi") {
-      // Mark Task 1 as complete in localStorage
-      localStorage.setItem("task1", "complete");
-      alert('Task 1 marked as complete!');
-      document.getElementById('popup').classList.remove('hidden');
-    } else {
-      alert('Try again!');
-    }
-  });
-
-  </script>
-
-  <script src="script.js"></script>
 </body>
 </html>

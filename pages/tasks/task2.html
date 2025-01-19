@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scavenger Hunt Task</title>
+  <link rel="stylesheet" href="../../styles/styles.css">
+</head>
+<body>
+
+    <script>
+        const userActivationCode = prompt(`Enter the activation code for Task 2: QR Code Mystery:`);
+        if (userActivationCode !== 'cloud computing') {
+            alert("Incorrect activation code! Redirecting to the main page.");
+            window.location.href = location.href;
+        }
+    </script>
+
+    <div class="content">
+        <header>
+            <h1>Task 2: QR Code Mystery</h1>
+            <p>What does \"QR\" stand for in QR code technology?</p>
+        </header>
+        <main>
+            <form id="task-form">
+
+                <div>
+                    <input type="radio" id="option1" name="answer" value="1" />
+                    <label for="option1">Quick Response</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="option2" name="answer" value="2" />
+                    <label for="option2">Quick Response</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="option3" name="answer" value="3" />
+                    <label for="option3">Quantum Reader</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="option4" name="answer" value="4" />
+                    <label for="option4">Quick Retrieval</label>
+                </div>
+
+                <button type="button" id="submit">Submit</button>
+
+            </form>
+
+            <div id="popup-correct" class="popup correct hidden">
+                <p>🎉 Correct! Task completed.</p>
+                <button onclick="closePopup('popup-correct', 'correct')">Close</button>
+            </div>
+        
+            <div id="popup-wrong" class="popup wrong hidden">
+                <p>❌ Wrong answer. Try again!</p>
+                <button onclick="closePopup('popup-wrong', 'wrong')">Close</button>
+            </div>
+            
+        </main>
+    </div>
+    
+  <footer>
+    <p>Powered by the Bulgarian IT Convention Team.</p>
+  </footer>
+  <script>
+    document.getElementById('submit').addEventListener('click', function () {
+      const selectedOption = document.querySelector('input[name="answer"]:checked');
+      const isCorrect = selectedOption ? parseInt(selectedOption.value, 10) === 1 : false;
+
+      if (isCorrect) {
+        document.getElementById("popup-correct").classList.remove('hidden');
+      } else {
+        document.getElementById("popup-wrong").classList.remove('hidden');
+      }
+    });
+
+    function closePopup(id, type) {
+        document.getElementById(`${id}`).classList.add('hidden');
+        if(type === 'correct'){
+            localStorage.setItem("taskId", 2);
+            window.location.href = '../task-completed.html';
+        }     
+    }
+  </script>
+</body>
+</html>
