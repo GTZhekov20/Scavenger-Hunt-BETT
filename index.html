@@ -30,6 +30,21 @@
     <p>Powered by the Bulgarian IT Convention Team.</p>
   </footer>
 
+  <script>
+    document.getElementById('submit').addEventListener('click', function () {
+    const answer = document.getElementById('answer').value.trim();
+    if (answer.toLowerCase() === "hi") {
+      // Mark Task 1 as complete in localStorage
+      localStorage.setItem("task1", "complete");
+      alert('Task 1 marked as complete!');
+      document.getElementById('popup').classList.remove('hidden');
+    } else {
+      alert('Try again!');
+    }
+  });
+
+  </script>
+
   <script src="script.js"></script>
 </body>
 </html>
