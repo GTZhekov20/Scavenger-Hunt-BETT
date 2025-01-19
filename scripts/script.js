@@ -17,7 +17,7 @@ function loadTaskFromURL() {
   // Prompt the user for the activation code
   const userActivationCode = prompt(`Enter the activation code for ${task.title}:`);
   if (userActivationCode !== task.activationCode) {
-    alert("Incorrect activation code! Redirecting to the main page.");
+    alert("Incorrect activation code! Please try again.");
     window.location.href = location.href;
     return null;
   }
